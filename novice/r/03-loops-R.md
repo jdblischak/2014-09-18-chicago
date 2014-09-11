@@ -21,7 +21,7 @@ We have created a function called `analyze` that creates graphs of the minimum, 
   min_day_inflammation <- apply(dat, 2, min)
   plot(min_day_inflammation)
 }
-      
+
 analyze("inflammation-01.csv")</code></pre>
 
 <img src="figure/03-loops-R-inflammation-011.png" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" style="display: block; margin: auto;" /><img src="figure/03-loops-R-inflammation-012.png" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" style="display: block; margin: auto;" /><img src="figure/03-loops-R-inflammation-013.png" title="plot of chunk inflammation-01" alt="plot of chunk inflammation-01" style="display: block; margin: auto;" />
@@ -104,7 +104,7 @@ but that's a bad approach for two reasons:
 [1] NA
 </code></pre></div>
 
-> **Tip:** R has has a special variable, `NA`, for designating **M**issing **V**alues in a data set.
+> **Tip:** R has has a special variable, `NA`, for designating missing values that are **N**ot **A**vailable in a data set.
 See `?NA` and [An Introduction to R][na] for more details.
 
 [na]: http://cran.r-project.org/doc/manuals/r-release/R-intro.html#Missing-values
@@ -149,12 +149,12 @@ The general form of a loop is:
 
 
 <pre class='in'><code>for (variable in collection) {
-    do things with variable
+  do things with variable
 }</code></pre>
 
 We can name the [loop variable](../../gloss.html#loop-variable) anything we like (with a few [restrictions][], e.g. the name of the variable cannot start with a digit).
 `in` is part of the `for` syntax.
-Note that the body of the loop is enclosed in braces `{`.
+Note that the body of the loop is enclosed in curly braces `{ }`.
 For a single-line loop body, as here, the braces aren't needed, but it is good practice to include them as we did.
 
 [restrictions]: http://cran.r-project.org/doc/manuals/R-intro.html#R-commands_003b-case-sensitivity-etc
@@ -165,7 +165,7 @@ Here's another loop that repeatedly updates a variable:
 <pre class='in'><code>len <- 0
 vowels <- c("a", "e", "i", "o", "u")
 for (v in vowels) {
-    len <- len + 1
+  len <- len + 1
 }
 # Number of vowels
 len</code></pre>
@@ -232,7 +232,7 @@ Note also that finding the length of a vector is such a common operation that R 
 <div class='out'><pre class='out'><code>[1] 1 2 3
 </code></pre></div>
 
-Using `seq`, write a function that prints the **N** natural numbers, one per line:
+Using `seq`, write a function that prints the first **N** natural numbers, one per line:
 
 
 
@@ -336,8 +336,8 @@ Let's test it by analyzing the first three files in the vector:
 <pre class='in'><code>filenames <- list.files(pattern = "csv")
 filenames <- filenames[1:3]
 for (f in filenames) {
-    print(f)
-    analyze(f)
+  print(f)
+  analyze(f)
 }</code></pre>
 
 
@@ -374,7 +374,7 @@ For instruction on best practices, see this supplementary [lesson](03-supp-loops
 #### Key Points
 
 * Use `for (variable in collection)` to process the elements of a collection one at a time.
-* The body of a `for` loop is surrounded by curly braces (`{}`).
+* The body of a `for` loop is surrounded by curly braces (`{ }`).
 * Use `length(thing)` to determine the length of something that contains other values.
 * Use `list.files(pattern = "pattern")` to create a list of files whose names match a pattern.
 </div>
