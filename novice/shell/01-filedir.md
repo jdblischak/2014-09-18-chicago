@@ -35,6 +35,32 @@ The dollar sign is a [prompt](../../gloss.html#prompt),
 which shows us that the shell is waiting for input;
 your shell may show something more elaborate.
 
+#### Before you begin
+
+In these lessons, we're going to explore Nelle's files.
+You can optionally download the example files and directories which Nelle is using,
+so that you can explore the same files as described in the lesson. To do this, download
+the zipped filesystem by clicking [this link](filesystem.zip). Unpack the zipped
+files - on Windows or a Mac, you can probably just double-click or click the downloaded
+file to unpack it. On linux you can type in a command like
+
+~~~
+$ unzip filesystem.zip
+~~~
+{:class="in"}
+
+Once you have Nelle's files and directories, change to Nelle's home directory to
+begin, by typing in the `cd` command:
+
+~~~
+$ cd filesystem/users/nelle
+~~~
+{:class="in"}
+
+Don't worry if you don't know what this command means yet! We will cover it soon.
+
+Now, let's get started exploring the Unix shell.
+
 Type the command `whoami`,
 then press the Enter key (sometimes marked Return) to send the command to the shell.
 The command's output is the ID of the current user,
@@ -80,7 +106,7 @@ $ pwd
 {:class="out"}
 
 > #### Alphabet Soup
-> 
+>
 > If the command to find out who we are is `whoami`, the command to find
 > out where we are ought to be called `whereami`, so why is it `pwd`
 > instead? The usual answer is that in the early 1970s, when Unix was
@@ -136,9 +162,9 @@ $ ls
 ~~~
 {:class="in"}
 ~~~
-bin          data      mail       music
-notes.txt    papers    pizza.cfg  solar
-solar.pdf    swc
+creatures  molecules           pizza.cfg
+data       north-pacific-gyre  solar.pdf
+Desktop    notes.txt           writing
 ~~~
 {:class="out"}
 
@@ -154,9 +180,9 @@ $ ls -F
 ~~~
 {:class="in"}
 ~~~
-bin/         data/     mail/      music/
-notes.txt    papers/   pizza.cfg  solar/
-solar.pdf    swc/
+creatures/  molecules/           pizza.cfg
+data/       north-pacific-gyre/  solar.pdf
+Desktop/    notes.txt            writing/
 ~~~
 {:class="out"}
 
@@ -171,7 +197,7 @@ the shell thinks we're trying to run a command called `ls-F`,
 which doesn't exist.
 
 > #### What's In A Name?
-> 
+>
 > You may have noticed that all of Nelle's files' names are "something dot
 > something". This is just a convention: we can call a file `mythesis` or
 > almost anything else we want. However, most people use two-part names
@@ -265,9 +291,9 @@ $ ls
 ~~~
 {:class="in"}
 ~~~
-bin/         data/     mail/      music/
-notes.txt    papers/   pizza.cfg  solar/
-solar.pdf    swc/
+creatures  molecules           pizza.cfg
+data       north-pacific-gyre  solar.pdf
+Desktop    notes.txt           writing
 ~~~
 {:class="out"}
 
@@ -297,7 +323,7 @@ $ pwd
 ~~~
 {:class="out"}
 ~~~
-$ ls
+$ ls -F
 ~~~
 {:class="in"}
 ~~~
@@ -354,9 +380,10 @@ $ ls -F -a
 ~~~
 {:class="in"}
 ~~~
-./           ../       bin/       data/
-mail/        music/    notes.txt  papers/
-pizza.cfg    solar/    solar.pdf    swc/
+./          Desktop/             pizza.cfg
+../         molecules/           solar.pdf
+creatures/  north-pacific-gyre/  writing/
+data/       notes.txt
 ~~~
 {:class="out"}
 
@@ -370,7 +397,7 @@ It may seem redundant to have a name for it,
 but we'll see some uses for it soon.
 
 > #### Orthogonality
-> 
+>
 > The special names `.` and `..` don't belong to `ls`;
 > they are interpreted the same way by every program.
 > For example,
@@ -427,7 +454,7 @@ but she can let the shell do most of the work.
 If she types:
 
 ~~~
-$ ls no
+$ ls nor
 ~~~
 {:class="in"}
 
