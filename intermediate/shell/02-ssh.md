@@ -284,6 +284,19 @@ $ rm id_rsa.pub
 $ exit
 ~~~
 
+Finally, with newer versions of the OpenSSH tool suite, there is one
+command that will do all of this for us: the `ssh-copy-id` command.
+
+~~~
+$ ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host
+jsmith@remote-host's password:
+Now try logging into the machine, with "ssh 'remote-host'", and check in:
+
+.ssh/authorized_keys
+
+to make sure we haven't added extra keys that you weren't expecting.
+~~~
+
 <div class="keypoints" markdown="1">
 
 #### Key Points
