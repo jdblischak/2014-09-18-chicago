@@ -40,9 +40,11 @@ If you don't see `id_rsa.pub`, use the following command to generate a new key p
 
 <div class="in" markdown="1">
 ~~~
-$ ssh-keygen -t rsa -C "your@email.com"
+$ ssh-keygen -o -t rsa -C "your@email.com"
 ~~~
 </div>
+
+(The `-o` option was added in 2014; if this command fails for you, just remove the `-o` and try again)
 
 When asked where to save the new key, hit enter to accept the default location.
 
